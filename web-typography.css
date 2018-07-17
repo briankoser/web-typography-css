@@ -1,0 +1,40 @@
+body {
+    font: 1 rem/1.4 font-name;
+    font-variant-ligatures: common-ligatures;
+}
+
+@media screen and (min-width: 60em) {
+    body { font-size: 1.125rem; }
+}
+
+@media screen and (min-width: 120em) {
+    body { font-size: 1.1375rem; }
+}
+
+p {
+    max-width: 100em;
+    margin: auto;
+            -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+            hyphens: auto;
+}
+
+abbr,
+.pn {
+        -ms-hyphens: manual;
+    -webkit-hyphens: manual;
+            hyphens: manual;
+}
+
+abbr.smallcaps {
+    /* if font has c2sc OpenType feature */
+    font-variant-caps: all-small-caps;
+    
+    /* if font only has smcp OpenType feature */
+    font-variant-caps: small-caps; 
+    text-transform: lowercase;
+}
+
+.historical-ligatures {
+    font-variant-ligatures: discretionary-ligatures historical-ligatures;
+}

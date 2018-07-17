@@ -1,0 +1,83 @@
+/* Stylesheet built from Web Typography by Richard Rutter */
+/* 2018-07-17 */
+/* All comments about browser support are as of the above date. */
+/* The numbers at the beginning of each line are the page numbers from the 2017 print edition. */
+/* All unit values are guidelines or examples. Experiment with your font to find the best values. */
+
+
+
+/* HTML */
+/* 50 <html lang="en-US"> set to your language and (optional) region tag */
+/* 76 <meta charset="utf-8"> */
+/* 58 <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
+
+/* 67 non-breaking space    - &nbsp;   - keep words together (eg dates) */
+/* 67 thin space            - &thinsp; - separate nested quotes */
+/* 68 hair space            - &hairsp; - prevent characters touching */
+/* 68 narrow no-break space - &#8239;  - separate numbers and units, initials in names */
+
+/* 70 en dash  - &mdash;  - numerical ranges */
+/* 71 em dash  - &ndash;  - set off phrases, with full space for quote attribution; separate from phrases with hair spaces */
+
+/* 72 minus          - − - &minus;  - use for math instead of hyphen */
+/* 72 division       - ÷ - &divide; - use obelus for math instead of solidus */
+/* 75 multiplication - × - &times;  - use for math instead of x */
+
+/* 72 quotes      - “ ” ‘ ’ - &ldquo; &rdquo; &lsquo; &rsquo;   - use instead of straight quote marks */
+/* 72 apostrophes - ’       - &rsquo;                           - use instead of straight single quote */
+/* 75 primes      - ′ ″    - &prime; (single) &Prime; (double) - use for feet/inches and minutes/seconds */
+
+/* 73 brackets, parentheses   - mark up to prevent being italicized */
+/* 75 ampersands   - &amp;    - use for tables, charts, captions */
+/* 75 ellipsis - … - &hellip; - use instead of 3 periods */
+/* 75 degrees  - ° - &deg;    - use instead of a superscript o*/
+
+
+
+/* CSS */
+/* 17 Use rems to scale something with the page (global sizing) */
+/* 17 Use ems to scale within a component (local sizing) */
+
+body {
+    font: 1 rem/1.4 font-name; /* 33, 37, 41 - base size is for mobile, use unitless multiplier for line-height */
+    font-variant-ligatures: common-ligatures; /* 82 font-variant-* are supported in IE10+ and modern browsers */
+}
+
+@media screen and (min-width: 60em) {
+    body { font-size: 1.125rem; } /* 61 size for tablet, laptop */
+}
+
+@media screen and (min-width: 120em) {
+    body { font-size: 1.1375rem; } /* 62 size for desktop */
+}
+
+p {
+    /* 24 max-width: 23-38 em */
+    margin: auto; /* 25 if you want to center text */
+            -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+            hyphens: auto; /* 50 caniuse.com/#feat=css-hyphens No desktop Chrome support */
+    /* 52 No support: hyphenate-limit-lines: 2; */
+    /* 53 No support: hyphenate-limit-chars: 6 3 2; */
+    /* 54 No support: hyphenate-limit-zone: 2em; */
+    /* 56 No support: hyphenate-limit-last: always; */
+}
+
+abbr,
+.pn {
+        -ms-hyphens: manual;
+    -webkit-hyphens: manual;
+            hyphens: manual; /* 51 don't auto-hyphenate abbreviations and proper names */
+                             /* caniuse.com/#feat=css-hyphens No desktop Chrome support */
+}
+
+abbr.smallcaps { /* 86 don't use in title-case headings */
+    font-variant-caps: all-small-caps; /* 86 if font has c2sc OpenType feature */
+    
+    font-variant-caps: small-caps; /* 86 if font only has smcp OpenType feature */
+    text-transform: lowercase;
+}
+
+.historical-ligatures {
+    font-variant-ligatures: discretionary-ligatures historical-ligatures;
+}
