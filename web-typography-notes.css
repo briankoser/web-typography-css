@@ -1,7 +1,8 @@
 /* Stylesheet built from Web Typography by Richard Rutter */
 /* 2018-07-17 */
-/* All comments about browser support are as of the above date. */
 /* The numbers at the beginning of each line are the page numbers from the 2017 print edition. */
+/* All HTML items are commented out (because this is a stylesheet). */
+/* All CSS items without browser support as of the above date are commented out. */
 /* All unit values are guidelines or examples. Experiment with your font to find the best values. */
 
 
@@ -52,7 +53,7 @@ body {
 }
 
 p {
-    /* 24 max-width: 23-38 em */
+    max-width: 1em; /* 24 suggested 23-38 em */
     margin: auto; /* 25 if you want to center text */
             -ms-hyphens: auto;
     -webkit-hyphens: auto;
@@ -61,7 +62,83 @@ p {
     /* 53 No support: hyphenate-limit-chars: 6 3 2; */
     /* 54 No support: hyphenate-limit-zone: 2em; */
     /* 56 No support: hyphenate-limit-last: always; */
+    
+    margin-bottom: 0; /* 104 indent paragraphs for long form; use space between for short form */
 }
+
+p + p {
+    margin-top: 0; /* 104 indent paragraphs for long form; use space between for short form */
+    text-indent: 1.5em; /* 104 indent paragraphs for long form; use space between for short form */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1; /* 98 less leading for headings */
+}
+
+/* 94, 95 set a hierarchy scale and adjust to different device sizes */
+h1 { 
+    font-size: 2.0625rem; /* 33px */
+}
+
+h2 { 
+    font-size: 1.5625rem; /* 25px */ 
+}
+h3 {
+    font-size: 1.3125rem; /* 21px */ 
+}
+
+h4, 
+h5,
+h6 { /* 97 even if you don't intend to use all of h1-h6, style them just in case */ 
+    font-size: 1rem; /* 16px */ 
+}
+
+p { 
+    font-size: 1rem; /* 16px */ 
+}
+
+@media screen and (min-width: 60em) and (min-height: 30em) {
+    h1 { font-size: 3.1875rem; /* 51px */ }
+    h2 { font-size: 2.0625rem; /* 33px */ }
+    h3 { font-size: 1.5625rem; /* 25px */ }
+    h4, h5, h6 { font-size: 1.125rem; /* 18px */ }
+    p { font-size: 1.125rem /* 18px */ }
+}
+
+@media screen and (min-width: 120em) and (min-height: 60em) {
+    h1 { font-size: 4.875rem; /* 78px */ }
+    h2 { font-size: 2.75rem; /* 44px */ }
+    h3 { font-size: 1.75rem; /* 28px */ }
+    h4, h5, h6 { font-size: 1.3125rem; /* 21px */ }
+    p { font-size: 1.3125rem; /* 21px */ }
+}
+
+
+
+article p:first-of-type::first-line {
+    font-variant-caps: small-caps; /* 99 to style run-ins */
+}
+
+/* 101 to implement drop caps - caniuse.com/#feat=css-initial-letter no browser support
+article p:first-of-type::first-letter {
+    initial-letter: 3;
+}
+*/
+
+/* 101 to open passage with symbol - caniuse.com/#feat=css-initial-letter no browser support
+article p:first-of-type::before {
+    content:"❧";
+}
+p:first-of-type::first-letter {
+    initial-letter: 2;
+}
+*/
+
 
 abbr,
 .pn {
@@ -80,4 +157,33 @@ abbr.smallcaps { /* 86 don't use in title-case headings */
 
 .historical-ligatures {
     font-variant-ligatures: discretionary-ligatures historical-ligatures;
+}
+
+/* 102 to style horizontal rules with an image */
+hr {
+    height: 1em;
+    border: 0;
+    background: url(fleuron.svg) center no-repeat;
+    background-size: contain;
+}
+
+/* 106 style regular blockquotes (cited text) differently than pull quotes (attention grabbing) */
+blockquote {
+    /* 106 indent from left, italicize or reduce font size */
+    /* 106 align citation right, reduce font size, set off with em dash */
+}
+blockquote.pull-quote {
+    /* 106 increase font size */
+}
+
+/* 107 hang opening quote by giving it a negative left margin */
+.quoted p {
+    quotes: '“' '”' '‘' '’';
+}
+.quoted p::before {
+    content: open-quote;
+    margin-left: -0.83ch;
+}
+.quoted p::after {
+    content: close-quote;
 }
