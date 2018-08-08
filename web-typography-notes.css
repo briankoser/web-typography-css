@@ -36,13 +36,15 @@
 /* 135 caption - first child in table for table captions; can set position with caption { caption-side: top | bottom } */
 /* 141 table - use non-breaking spaces and white-space:nowrap to avoid wrapping when more legible */
 
+/* 164 widows - insert &nbsp; between final two words in headings and paragraphs */
+
 
 /* CSS */
 /* 17 Use rems to scale something with the page (global sizing) */
 /* 17 Use ems to scale within a component (local sizing) */
 
 body {
-    font: 1 rem/1.4 font-name; /* 33, 37, 41 - base size is for mobile, use unitless multiplier for line-height */
+    font: 1 rem/1.4 font-name; /* 33, 37, 41, 164 - base size is for mobile, use unitless multiplier for line-height */
     font-variant-ligatures: common-ligatures; /* 82 font-variant-* are supported in IE10+ and modern browsers */
     font-variant-numeric: oldstyle-nums; /* 120 old-style "lowercase" numerals for text */
 }
@@ -296,4 +298,55 @@ h1.upper-case {
 /* 150 tighten title-cased headings a little */
 h1.title-case {
     letter-spacing: -0.03em;
+}
+
+/* 162 use ch when you want constant line breaks */
+.constant-line-breaks { 
+    width: 21ch; 
+}
+
+/* 166 use swashes when available and appropriate; can be stored in different numbered tables, eg swash(2); may need to turn on for individual characters */
+h1.swash {
+    font-variant-alternates: swash(1);
+}
+
+/* 167 use discretionary ligatures when available and appropriate */
+.discretionary-ligatures { 
+    font-variant-ligatures: discretionary-ligatures; 
+}
+
+/* 167 use historical ligatures when available and appropriate */
+.historical-ligatures { 
+    font-variant-ligatures: historical-ligatures; 
+}
+
+/* 168 use stylistic alternates when available and appropriate */
+.stylistic-alternates {
+    font-variant-alternates: stylistic(1);
+    font-variant-alternates: styleset(3) styleset(4); /* 168 can set multiple stylesets */
+}
+
+/* 170 use contextual ligatures when available and appropriate */
+.contextual-ligatures {
+    font-variant-ligatures: contextual;
+}
+
+/* 170 use historical forms when available and appropriate */
+.historical-forms {
+    font-variant-alternates: historical-forms;
+}
+
+/* 170 use character variants when available and appropriate */
+.character-variant {
+    font-variant-alternates: character-variant(1);
+}
+
+/* 170 use ornaments when available and appropriate */
+.ornaments {
+    font-variant-alternates: ornaments(1);
+}
+
+/* 170 use annotation forms when available and appropriate */
+.annotation {
+    font-variant-alternates: annotation(1);
 }
