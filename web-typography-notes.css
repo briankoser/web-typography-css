@@ -1,5 +1,5 @@
 /* Stylesheet built from Web Typography by Richard Rutter */
-/* 2018-07-17 */
+/* 2018-08-08 */
 /* The numbers at the beginning of each line are the page numbers from the 2017 print edition. */
 /* All HTML items are commented out (because this is a stylesheet). */
 /* All CSS items without browser support as of the above date are commented out. */
@@ -8,31 +8,33 @@
 
 
 /* HTML */
-/* 50 <html lang="en-US"> set to your language and (optional) region tag */
-/* 76 <meta charset="utf-8"> */
-/* 58 <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
+/*  50 <html lang="en-US"> set to your language and (optional) region tag */
+/*  76 <meta charset="utf-8"> */
+/*  58 <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
 
-/* 67 non-breaking space    - &nbsp;   - keep words together (eg dates) */
-/* 67 thin space            - &thinsp; - separate nested quotes */
-/* 68 hair space            - &hairsp; - prevent characters touching */
-/* 68 narrow no-break space - &#8239;  - separate numbers and units, initials in names */
+/*  67 non-breaking space    - &nbsp;   - keep words together (eg dates) */
+/*  67 thin space            - &thinsp; - separate nested quotes */
+/*  68 hair space            - &hairsp; - prevent characters touching */
+/*  68 narrow no-break space - &#8239;  - separate numbers and units, initials in names */
 
-/* 70 en dash  - &mdash;  - numerical ranges */
-/* 71 em dash  - &ndash;  - set off phrases, with full space for quote attribution; separate from phrases with hair spaces */
+/*  70 en dash  - &mdash;  - numerical ranges */
+/*  71 em dash  - &ndash;  - set off phrases, with full space for quote attribution; separate from phrases with hair spaces */
 
-/* 72 minus          - − - &minus;  - use for math instead of hyphen */
-/* 72 division       - ÷ - &divide; - use obelus for math instead of solidus */
-/* 75 multiplication - × - &times;  - use for math instead of x */
+/*  72 minus          - − - &minus;  - use for math instead of hyphen */
+/*  72 division       - ÷ - &divide; - use obelus for math instead of solidus */
+/*  75 multiplication - × - &times;  - use for math instead of x */
 
-/* 72 quotes      - “ ” ‘ ’ - &ldquo; &rdquo; &lsquo; &rsquo;   - use instead of straight quote marks */
-/* 72 apostrophes - ’       - &rsquo;                           - use instead of straight single quote */
-/* 75 primes      - ′ ″    - &prime; (single) &Prime; (double) - use for feet/inches and minutes/seconds */
+/*  72 quotes      - “ ” ‘ ’ - &ldquo; &rdquo; &lsquo; &rsquo;   - use instead of straight quote marks */
+/*  72 apostrophes - ’       - &rsquo;                           - use instead of straight single quote */
+/*  75 primes      - ′ ″    - &prime; (single) &Prime; (double) - use for feet/inches and minutes/seconds */
 
-/* 73 brackets, parentheses   - mark up to prevent being italicized */
-/* 75 ampersands   - &amp;    - use for tables, charts, captions */
-/* 75 ellipsis - … - &hellip; - use instead of 3 periods */
-/* 75 degrees  - ° - &deg;    - use instead of a superscript o*/
+/*  73 brackets, parentheses   - mark up to prevent being italicized */
+/*  75 ampersands   - &amp;    - use for tables, charts, captions */
+/*  75 ellipsis - … - &hellip; - use instead of 3 periods */
+/*  75 degrees  - ° - &deg;    - use instead of a superscript o*/
 
+/* 135 caption - first child in table for table captions; can set position with caption { caption-side: top | bottom } */
+/* 141 table - use non-breaking spaces and white-space:nowrap to avoid wrapping when more legible */
 
 
 /* CSS */
@@ -42,6 +44,7 @@
 body {
     font: 1 rem/1.4 font-name; /* 33, 37, 41 - base size is for mobile, use unitless multiplier for line-height */
     font-variant-ligatures: common-ligatures; /* 82 font-variant-* are supported in IE10+ and modern browsers */
+    font-variant-numeric: oldstyle-nums; /* 120 old-style "lowercase" numerals for text */
 }
 
 @media screen and (min-width: 60em) {
@@ -78,16 +81,20 @@ h4,
 h5,
 h6 {
     line-height: 1; /* 98 less leading for headings */
+    font-variant-numeric: lining-nums; /* 122 lining "uppercase" numerals for headings */
 }
 
 /* 94, 95 set a hierarchy scale and adjust to different device sizes */
 h1 { 
     font-size: 2.0625rem; /* 33px */
+    font-size: 13vmin; /* 155 consider using vmin to scale large display headings with viewport */
 }
 
 h2 { 
-    font-size: 1.5625rem; /* 25px */ 
+    font-size: 1.5625rem; /* 25px */
+    font-size: calc(0.5rem + 2.5vmin); /* 158 consider using rem and vmin to scale subheadings modestly */
 }
+
 h3 {
     font-size: 1.3125rem; /* 21px */ 
 }
@@ -167,6 +174,10 @@ hr {
     background-size: contain;
 }
 
+ol,
+ul { /* 108 */
+}
+
 /* 106 style regular blockquotes (cited text) differently than pull quotes (attention grabbing) */
 blockquote {
     /* 106 indent from left, italicize or reduce font size */
@@ -174,6 +185,23 @@ blockquote {
 }
 blockquote.pull-quote {
     /* 106 increase font size */
+}
+
+a { /* 114 */
+}
+
+sub,
+sup { /* 124 removed default styles */ 
+    font-size: inherit;
+    vertical-align: inherit;
+}
+
+sub { 
+    font-variant-position: sub; /* 123 correct subscript position */
+}
+
+sup { 
+    font-variant-position: sup; /* 123 correct superscript position */
 }
 
 /* 107 hang opening quote by giving it a negative left margin */
@@ -186,4 +214,86 @@ blockquote.pull-quote {
 }
 .quoted p::after {
     content: close-quote;
+}
+
+table {
+    border-collapse: collapse; /* 134 one border between cells */
+    font-variant-numeric: lining-nums tabular-nums; /* 133 use lining and tabular numerals for tables */
+}
+
+/* 130 set on header and body */
+table .numeric-column {
+    text-align: right;
+}
+
+td,
+th {
+    line-height: 1; /* 134 */
+    padding: 0.125em 0.5em 0.25em 0.5em; /* 134 spacing for legibility */
+}
+
+/* 131 align to character
+   no browser support
+   eg 1.2 and 1.23 on ., 10 x 10 and 4 x 4 on x, 4:3 and 16:10 on : 
+*/
+/* td.align-decimal { text-align: "." center; }*/
+
+/* 140 oblique headings when needed to save space; absolute position headings to shrink columns */
+th.oblique-heading {
+    transform-origin: bottom left;
+    position: absolute;
+}
+
+th.oblique-heading.table1 {
+    transform: translate(2.58em,-2em) rotate(-60deg);
+}
+
+/* 141 allow tables to scroll horizontally when necessary */
+figure.scrolling-table {
+    overflow-x: scroll;
+    max-width: 100%;
+}
+
+/* 143 responsive tables - display as list at breakpoint */
+@media (max-width: 25em) {
+    table, 
+    caption, 
+    tbody, 
+    tr, 
+    th, 
+    td {
+        display: block;
+        text-align: left;
+    }
+    
+    thead, 
+    th:empty, 
+    td:empty {
+        display: none;
+        visibility: hidden;
+    }
+    
+    th[data-title]:before, 
+    td[data-title]:before {
+        content: attr(data-title) ": ";
+        display: inline-block;
+        width: 3.5em;
+    }
+}
+
+/* 149 add tracking for strings of 3+ digits */
+.digit-string {
+    letter-spacing: 0.05em; 
+}
+
+/* 149 space all-caps headings a little */
+h1.upper-case {
+    letter-spacing: 0.5em; 
+    margin-right: -0.5em; /* 149 compensate for incorrect spacing after last letter */
+    font-feature-settings: normal; /* 151 don't use ligatures when tracking */
+}
+
+/* 150 tighten title-cased headings a little */
+h1.title-case {
+    letter-spacing: -0.03em;
 }
