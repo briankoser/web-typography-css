@@ -1,5 +1,5 @@
 /* Stylesheet built from Web Typography by Richard Rutter */
-/* 2018-08-08 */
+/* 2018-08-24 */
 /* The numbers at the beginning of each line are the page numbers from the 2017 print edition. */
 /* All HTML items are commented out (because this is a stylesheet). */
 /* All CSS items without browser support as of the above date are commented out. */
@@ -69,6 +69,7 @@ p {
     /* 56 No support: hyphenate-limit-last: always; */
     
     margin-bottom: 0; /* 104 indent paragraphs for long form; use space between for short form */
+    margin-bottom: 1.4em; /* 172 when using space between paragraphs, maintain vertical rhythm by setting bottom margin to size of line height */
 }
 
 p + p {
@@ -83,6 +84,7 @@ h4,
 h5,
 h6 {
     line-height: 1; /* 98 less leading for headings */
+        /* 173 set heading line heights to maintain vertical rhythm */
     font-variant-numeric: lining-nums; /* 122 lining "uppercase" numerals for headings */
 }
 
@@ -350,3 +352,5 @@ h1.swash {
 .annotation {
     font-variant-alternates: annotation(1);
 }
+
+/* last page read: 181 */
