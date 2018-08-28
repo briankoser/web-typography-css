@@ -1,5 +1,5 @@
 /* Stylesheet built from Web Typography by Richard Rutter */
-/* 2018-08-24 */
+/* 2018-08-28 */
 /* The numbers at the beginning of each line are the page numbers from the 2017 print edition. */
 /* All HTML items are commented out (because this is a stylesheet). */
 /* All CSS items without browser support as of the above date are commented out. */
@@ -70,6 +70,7 @@ p {
     
     margin-bottom: 0; /* 104 indent paragraphs for long form; use space between for short form */
     margin-bottom: 1.4em; /* 172 when using space between paragraphs, maintain vertical rhythm by setting bottom margin to size of line height */
+        /* 183 use ems to set margins in running text, percentages or vw for surrounding white space */
 }
 
 p + p {
@@ -353,4 +354,15 @@ h1.swash {
     font-variant-alternates: annotation(1);
 }
 
-/* last page read: 181 */
+/* 201 use greyscale smoothing to correct Mac display of large, reversed text (white text on black background) */
+.dark-theme h1 {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 261 consider using the system font for functional text like captions */
+caption {
+    font: message-box;
+    font: -apple-system-body;
+    font-size: 1.2rem;
+}
