@@ -1,5 +1,2 @@
 # web-typography-css
-A stylesheet based on Richard Rutter's book [Web Typography](http://www.book.webtypography.net/). Not a replacement for purchasing the book, merely a reference and template. Absolutely buy the book, it's great.
-
-- web-typography.css has just the styles
-- web-typography-notes.css has explanations and page number references
+A stylesheet based on Richard Rutter's book [Web Typography](http://www.book.webtypography.net/). Absolutely not a replacement for purchasing the book; merely a reference and template. Seriously, you need to read the book to understand when and how to use the CSS. Plus, there's a ton of knowledge that's not even referenced in this stylesheet, like how to choose and pair typefaces. [Buy the book](http://www.book.webtypography.net/), it's great.
